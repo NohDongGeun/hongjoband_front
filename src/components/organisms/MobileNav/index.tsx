@@ -13,30 +13,32 @@ const MobileNav: React.FC<IMobileNavProps> = ({ isOpen, handleSideNav }) => {
     <>
       <Container isOpen={isOpen}>
         <ContentContainer>
-          <Xbox>
-            <XboxButton onClick={handleSideNav}>
-              <MdClose size={"30"} color={"#ff5a8c"} />
-            </XboxButton>
-          </Xbox>
-          <LogoBox>
-            <LogoImg src={logo} />
-          </LogoBox>
-          <NavBox>
-            <NavUl>
-              <NavLi>
-                <NavText>Home</NavText>
-              </NavLi>
-              <NavLi>
-                <NavText>Music</NavText>
-              </NavLi>
-              <NavLi>
-                <NavText>Jeju</NavText>
-              </NavLi>
-              <NavLi>
-                <NavText>Geust</NavText>
-              </NavLi>
-            </NavUl>
-          </NavBox>
+          <TopBox>
+            <Xbox>
+              <XboxButton onClick={handleSideNav}>
+                <MdClose size={"30"} color={"#ff5a8c"} />
+              </XboxButton>
+            </Xbox>
+            <LogoBox>
+              <LogoImg src={logo} />
+            </LogoBox>
+            <NavBox>
+              <NavUl>
+                <NavLi>
+                  <NavText>Home</NavText>
+                </NavLi>
+                <NavLi>
+                  <NavText>Music</NavText>
+                </NavLi>
+                <NavLi>
+                  <NavText>Jeju</NavText>
+                </NavLi>
+                <NavLi>
+                  <NavText>Geust</NavText>
+                </NavLi>
+              </NavUl>
+            </NavBox>
+          </TopBox>
           <ContactBox>
             <ContactButton>Contact</ContactButton>
           </ContactBox>
@@ -47,6 +49,8 @@ const MobileNav: React.FC<IMobileNavProps> = ({ isOpen, handleSideNav }) => {
 };
 
 export default MobileNav;
+
+export const TopBox = styled.div``;
 
 export const Container = styled.div<IMobileNavProps>`
   display: block;
@@ -71,6 +75,7 @@ export const ContentContainer = styled.div`
   width: 100%;
   height: 100%;
   flex-direction: column;
+  justify-content: space-between;
   position: relative;
 `;
 
@@ -78,7 +83,7 @@ export const BottomBox = styled.div``;
 
 export const LogoBox = styled.div`
   width: 100%;
-  padding: 20px 20px;
+  padding: 10px 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -87,8 +92,8 @@ export const LogoBox = styled.div`
 `;
 
 export const LogoImg = styled.img`
-  width: 230px;
-  height: 100px;
+  width: 200px;
+  height: 70px;
 `;
 
 export const Xbox = styled.div`
@@ -112,11 +117,12 @@ export const XboxButton = styled.button`
 
   &:active {
     opacity: 0.7;
+    background-color: #ffffff;
   }
 `;
 
 export const NavBox = styled.nav`
-  padding: 20px 20px;
+  padding: 0 20px;
 `;
 
 export const NavUl = styled.ul`
@@ -128,6 +134,7 @@ export const NavUl = styled.ul`
 export const NavLi = styled.li`
   list-style-type: none;
   width: 100%;
+  height: 50px;
   border-bottom: 1px solid #ffc4d6;
   display: flex;
   align-items: center;
@@ -136,31 +143,32 @@ export const NavLi = styled.li`
 
 export const NavText = styled.p`
   font-weight: bold;
-  font-size: 23px;
+  font-size: 18px;
   color: #ff7da4;
+  margin: 0;
 `;
 
 export const ContactBox = styled.div`
-  position: absolute;
   width: 100%;
-  left: 0;
-  top: calc(100% - 70px);
+  display: flex;
+  align-items: end;
 `;
 
 export const ContactButton = styled.button`
   width: 100%;
-  height: 70px;
+  height: 60px;
   background-color: #ff5a8c;
   border: none;
   color: #ffffff;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 18px;
 
-  &:hover {
-    opacity: 0.7;
+  &:focus {
+    outline: 0;
   }
 
   &:active {
     opacity: 0.7;
+    outline: 0;
   }
 `;

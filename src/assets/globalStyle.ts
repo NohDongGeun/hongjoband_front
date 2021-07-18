@@ -10,11 +10,13 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
   }
 
-  button {
-      &:active{
-          background-color: none;
-      }
-  }
+  input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 `;
 
 export default GlobalStyle;

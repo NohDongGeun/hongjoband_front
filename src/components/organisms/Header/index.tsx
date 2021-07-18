@@ -125,6 +125,12 @@ export const MobileNavButton = styled.button`
   background-color: transparent;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+
+  &:active {
+    opacity: 0.8;
+  }
 
   @media only screen and (min-width: 660px) {
     display: none;
