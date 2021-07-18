@@ -159,7 +159,7 @@ export const NavUl = styled.nav`
 
 export const NavLi = styled.li`
   list-style-type: none;
-  margin-right: 15px;
+  margin-right: 20px;
 `;
 
 export const NavText = styled.p`
@@ -176,7 +176,7 @@ export const ContactBox = styled.button`
   font-weight: bold;
   font-size: 20px;
   border-radius: 10px;
-  margin-left: 30px;
+  margin-left: 40px;
   &:hover {
     opacity: 0.8;
   }
