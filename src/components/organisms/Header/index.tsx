@@ -19,7 +19,7 @@ const Header: React.FC<IHeader> = ({ handleSideNav }) => {
             <MobileLogo src={Mobiles} />
           </LogoBox>
           <MobileNavButton onClick={handleSideNav}>
-            <GiHamburgerMenu size={"35"} color={"	#ff3673"} />
+            <GiHamburgerMenu size={"30"} color={"	#ff3673"} />
           </MobileNavButton>
           <NavBox>
             <NavUl>
@@ -126,7 +126,6 @@ export const MobileNavButton = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
 
   &:active {
     opacity: 0.8;

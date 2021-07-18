@@ -97,11 +97,11 @@ export const LogoImg = styled.img`
 `;
 
 export const Xbox = styled.div`
-  height: 60px;
+  height: 30px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   margin: 10px 10px;
 `;
 
@@ -122,7 +122,7 @@ export const XboxButton = styled.button`
 `;
 
 export const NavBox = styled.nav`
-  padding: 0 20px;
+  padding: 10px 20px;
 `;
 
 export const NavUl = styled.ul`
@@ -131,21 +131,40 @@ export const NavUl = styled.ul`
   padding: 0 !important;
 `;
 
-export const NavLi = styled.li`
-  list-style-type: none;
-  width: 100%;
-  height: 50px;
-  border-bottom: 1px solid #ffc4d6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const NavText = styled.p`
+export const NavText = styled.button`
   font-weight: bold;
   font-size: 18px;
   color: #ff7da4;
   margin: 0;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+`;
+
+export const NavLi = styled.li`
+  list-style-type: none;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #ffc4d6;
+    border-radius: 10px;
+  }
+
+  &:active {
+    background-color: #ffc4d6;
+  }
+
+  &:hover ${NavText} {
+    color: #ffffff;
+  }
+
+  &:active ${NavText} {
+    color: #ffffff;
+  }
 `;
 
 export const ContactBox = styled.div`
