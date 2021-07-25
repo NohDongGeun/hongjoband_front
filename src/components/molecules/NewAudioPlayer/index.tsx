@@ -26,7 +26,11 @@ const NewAudioPlayer: React.FC<IAudioPlayer> = ({
           {isPlaying ? (
             <AiOutlinePause color={"#894f55"} size={"30"} />
           ) : (
-            <BsFillPlayFill color={"#894f55"} size={"30"} />
+            <BsFillPlayFill
+              style={{ marginLeft: "5px" }}
+              color={"#894f55"}
+              size={"30"}
+            />
           )}
         </PlayPauseButton>
         <LeftTextBox>
