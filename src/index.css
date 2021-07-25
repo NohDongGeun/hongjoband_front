@@ -25,6 +25,12 @@ body {
   height: 100%;
 }
 
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+}
+
 /* HTML5 display definitions
    ========================================================================== */
 

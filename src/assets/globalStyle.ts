@@ -16,6 +16,8 @@ button,
 select,
 a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  border: none;
+  background-color: transparent;
 }
 `;
 

@@ -9,18 +9,19 @@ interface IHeader {
   handleSideNav: () => void;
 }
 
-const Header: React.FC<IHeader> = ({ handleSideNav }) => {
+const Header: React.FC = () => {
   return (
     <>
       <Container>
         <ContentContainer>
           <LogoBox>
-            <Logo src={logo} />
-            <MobileLogo src={Mobiles} />
+            {/* <Logo src={logo} />
+            <MobileLogo src={Mobiles} /> */}
+            HONGJO
           </LogoBox>
-          <MobileNavButton onClick={handleSideNav}>
+          {/* <MobileNavButton onClick={handleSideNav}>
             <GiHamburgerMenu size={"30"} color={"	#ff3673"} />
-          </MobileNavButton>
+          </MobileNavButton> */}
           <NavBox>
             <NavUl>
               <NavLi>
@@ -36,7 +37,7 @@ const Header: React.FC<IHeader> = ({ handleSideNav }) => {
                 <NavText>Guest</NavText>
               </NavLi>
               <NavLi>
-                <ContactBox>Contact</ContactBox>
+                <NavText>contact</NavText>
               </NavLi>
             </NavUl>
           </NavBox>
@@ -51,8 +52,7 @@ export default Header;
 export const Container = styled.div`
   width: 100%;
   height: 60px;
-  border-bottom: 1px solid #ffc4d6;
-  background-color: #fafbfc;
+  background-color: transparent;
   position: fixed;
   left: 0;
   top: 0;
@@ -69,6 +69,7 @@ export const ContentContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px 10px;
+  width: 60%;
 
   @media only screen and (min-width: 660px) {
     padding: 0px 20px;
@@ -79,20 +80,24 @@ export const ContentContainer = styled.div`
   }
 
   @media only screen and (min-width: 1440px) {
-    padding: 0px 70px;
+    padding: 0px 30px;
     max-width: 1520px;
   }
 
   @media only screen and (min-width: 1640px) {
     padding: 0;
-    margin: 0 auto;
   }
 `;
 
 export const LogoBox = styled.div`
   width: 160px;
   height: 30px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #736e66;
   @media only screen and (min-width: 660px) {
     height: 60px;
   }
@@ -154,7 +159,7 @@ export const NavUl = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 `;
 
 export const NavLi = styled.li`
@@ -165,7 +170,8 @@ export const NavLi = styled.li`
 export const NavText = styled.p`
   color: #ff7da4;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
+  color: #736e66;
 `;
 
 export const ContactBox = styled.button`
