@@ -47,10 +47,13 @@ const NewAudioPlayer: React.FC<IAudioPlayer> = ({
             }
             className={"react-waves"}
             options={{
-              barHeight: 2,
+              barGap: 3,
+              barWidth: 4,
+              barHeight: 5,
+              barRadius: 3,
               cursorWidth: 0,
-              hideScrollbar: true,
               height: 30,
+              hideScrollbar: true,
               progressColor: "#EC407A",
               responsive: true,
               waveColor: "#D1D6DA",
@@ -77,7 +80,7 @@ export const Container = styled.div`
   top: calc(100% - 100px);
   left: 0;
   flex-direction: row;
-  border-top-right-radius: 2px;
+  border-top-right-radius: 20px;
 
   @media only screen and (min-width: 660px) {
     padding: 20px 0 20px 40px;
@@ -140,8 +143,8 @@ export const Time = styled.div`
 
 export const RangeBox = styled.div`
   width: 50%;
-  margin: 0 20px;
   display: flex;
+  margin-right: 20px;
   height: 30px;
   justify-content: center;
   align-items: center;
