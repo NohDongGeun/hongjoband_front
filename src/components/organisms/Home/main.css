@@ -1,0 +1,19 @@
+.st1 {
+  stroke-dasharray: 1500; /*이 값은 path의 길이와 동일합니다*/
+  stroke-dashoffset: 0;
+  stroke-opacity: 0;
+  animation: dash 1s linear alternate;
+  animation-delay: 1.6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-opacity: 0;
+    stroke-dashoffset: 1500;
+  }
+  to {
+    stroke-opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}

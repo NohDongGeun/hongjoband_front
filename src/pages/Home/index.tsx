@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import Header from "../../components/organisms/Header";
-// import MobileNav from "../../components/organisms/MobileNav";
+import About from "../../components/organisms/Home/About";
+import Active from "../../components/organisms/Home/Active";
+import MainBox, { ImageBox } from "../../components/organisms/Home/MainBox";
+import Header from "../../components/organisms/Header";
+import MobileNav from "../../components/organisms/MobileNav";
+import Wrapper from "../../components/organisms/Home/Wrapper";
+import MobileWrapper from "../../components/organisms/Home/MobileWrapper";
 
 const Home: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -11,18 +16,21 @@ const Home: React.FC = () => {
   };
 
   return (
-    <Container>
-      {/* <Header handleSideNav={handleSideNav} />
-      <MobileNav isOpen={isOpen} handleSideNav={handleSideNav} /> */}
-    </Container>
+    <React.Fragment>
+      <Wrapper />
+      <MobileWrapper />
+    </React.Fragment>
   );
 };
 
 export default Home;
 
 export const Container = styled.div`
-  height: 100%;
   width: 100%;
-  overflow-x: hidden;
-  position: relative;
+  background-color: #f6f4f0;
+`;
+
+export const MiddleBox = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

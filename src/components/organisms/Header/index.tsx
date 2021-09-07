@@ -4,40 +4,53 @@ import logo from "../../../images/hongo_logo.png";
 import Mobiles from "../../../images/hongjo_logo_text.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import MobileNav from "../MobileNav";
+import FadeIn from "react-fade-in";
 
 interface IHeader {
-  handleSideNav: () => void;
+  handleSideNav?: () => void;
 }
 
-const Header: React.FC = () => {
+const Header = React.forwardRef<any | null, IHeader>((props, ref) => {
   return (
     <>
-      <Container>
+      <Container ref={ref}>
         <ContentContainer>
-          <LogoBox>
-            {/* <Logo src={logo} />
+          <FadeIn delay={300}>
+            <LogoBox>
+              {/* <Logo src={logo} />
             <MobileLogo src={Mobiles} /> */}
-            HONGJO
-          </LogoBox>
-          {/* <MobileNavButton onClick={handleSideNav}>
+              HONGJO
+            </LogoBox>
+          </FadeIn>
+          <MobileNavButton onClick={() => console.log}>
             <GiHamburgerMenu size={"30"} color={"	#ff3673"} />
-          </MobileNavButton> */}
+          </MobileNavButton>
           <NavBox>
             <NavUl>
               <NavLi>
-                <NavText>Home</NavText>
+                <FadeIn delay={400}>
+                  <NavText>Home</NavText>
+                </FadeIn>
               </NavLi>
               <NavLi>
-                <NavText>Music</NavText>
+                <FadeIn delay={500}>
+                  <NavText>Music</NavText>
+                </FadeIn>
               </NavLi>
               <NavLi>
-                <NavText>Jeju</NavText>
+                <FadeIn delay={600}>
+                  <NavText>Jeji</NavText>
+                </FadeIn>
               </NavLi>
               <NavLi>
-                <NavText>Guest</NavText>
+                <FadeIn delay={700}>
+                  <NavText>Guest</NavText>
+                </FadeIn>
               </NavLi>
               <NavLi>
-                <NavText>contact</NavText>
+                <FadeIn delay={800}>
+                  <NavText>Contact</NavText>
+                </FadeIn>
               </NavLi>
             </NavUl>
           </NavBox>
@@ -45,7 +58,7 @@ const Header: React.FC = () => {
       </Container>
     </>
   );
-};
+});
 
 export default Header;
 
@@ -54,9 +67,9 @@ export const Container = styled.div`
   height: 60px;
   background-color: transparent;
   position: fixed;
-  left: 0;
   top: 0;
-
+  left: 0;
+  z-index: 1000;
   @media only screen and (min-width: 660px) {
     height: 70px;
   }
@@ -68,29 +81,28 @@ export const ContentContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px;
-  width: 60%;
+  padding: 10px 20px;
+  width: 100%;
 
-  @media only screen and (min-width: 660px) {
-    padding: 0px 20px;
+  @media only screen and (min-width: 480px) {
+    padding: 10px 40px;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 660px) {
     padding: 0px 40px;
   }
 
-  @media only screen and (min-width: 1440px) {
-    padding: 0px 30px;
-    max-width: 1520px;
+  @media only screen and (min-width: 1024px) {
+    padding: 0px 70px;
   }
-
-  @media only screen and (min-width: 1640px) {
+  @media only screen and (min-width: 1510px) {
     padding: 0;
+    margin: 0 auto;
+    max-width: 1438px;
   }
 `;
 
 export const LogoBox = styled.div`
-  width: 160px;
   height: 30px;
   display: flex;
   justify-content: center;
@@ -164,7 +176,10 @@ export const NavUl = styled.nav`
 
 export const NavLi = styled.li`
   list-style-type: none;
-  margin-right: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 `;
 
 export const NavText = styled.p`
